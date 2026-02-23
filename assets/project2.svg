@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="480" viewBox="0 0 800 480">
-  <rect width="100%" height="100%" fill="#FFFFFF" />
-  <rect x="24" y="24" width="752" height="432" rx="12" fill="#F8FAFC" />
-  <rect x="48" y="48" width="704" height="240" rx="8" fill="#ECFEFF" />
-  <circle cx="200" cy="168" r="48" fill="#C7F9F1" />
-  <text x="56" y="120" font-family="Inter, Arial, sans-serif" font-size="28" fill="#0F172A">Blog cá nhân (SSG)</text>
-</svg>
