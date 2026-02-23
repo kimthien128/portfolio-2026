@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Kim Thiện 2026</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+</head>
+
+<body>
+    <header class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md border-b border-gray-200 z-50">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <!-- logo -->
+            <div class="flex items-center gap-3">
+                <div
+                    class="w-10 h-10 border-2 border-gray-900 rounded-lg flex items-center justify-center font-bold text-lg">
+                    KT
+                </div>
+                <span class="font-semibold text-lg">Kim Thiện</span>
+            </div>
+            <!-- center -->
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#work">Work</a>
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <!-- button download resume -->
+            <button class="flex items-center gap-2 px-4 py-2 bg-gray-900 text-white rounded-full">
+                <i class="ph-fill ph-download-simple"></i>
+                Resume
+            </button>
+        </div>
+    </header>
+
+    <!-- hero -->
+    <section class="pt-32 pb-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <!-- grid -->
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <!-- left -->
+                <div class="space-y-8"> <!--Tự động thêm margin-bottom 32px cho mỗi con-->
+                    <!-- badge status -->
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-medium">
+                        <i class="ph-fill ph-lightning"></i>
+                        <span>Available for work</span>
+                    </div>
+
+                    <!-- title -->
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                        Hi, I'm Kim Thiện <br>
+                        <span class="text-blue-600">Fullstack Developer</span>
+                    </h1>
+
+                    <!-- introduce -->
+                    <p class="text-lg text-gray-600 max-w-lg leading-relaxed">Tôi là một lập trình viên chuyên về phát
+                        triển web và ứng
+                        dụng di
+                        động, với kinh
+                        nghiệm trong
+                        việc thiết kế và xây dựng các sản phẩm kỹ thuật số hiệu quả.</p>
+
+                    <!-- button -->
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#work"
+                            class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition">
+                            <span>View My Work</span>
+                            <i class="ph-fill ph-arrow-right"></i>
+                        </a>
+
+                        <a href="#contact"
+                            class="inline-flex items-center justify-center gap-2 px-6 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition">
+                            <i class="ph-fill ph-chat-circle-text"></i>
+                            <span>Let's Talk</span>
+                        </a>
+                    </div>
+
+                    <!-- social links -->
+                    <div class="flex items-center gap-6 pt-4">
+                        <a href="#" class="text-gray-400 hover:text-gray-900 transition"><i
+                                class="ph-fill ph-linkedin-logo text-2xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-gray-900 transition"><i
+                                class="ph-fill ph-twitter-logo text-2xl"></i></a><a href="#"
+                            class="text-gray-400 hover:text-gray-900 transition"><i
+                                class="ph-fill ph-dribbble-logo text-2xl"></i></a><a href="#"
+                            class="text-gray-400 hover:text-gray-900 transition"><i
+                                class="ph-fill ph-github-logo text-2xl"></i></a>
+                    </div>
+                </div>
+
+                <!-- right -->
+                <div class="relative">
+                    <!-- img -->
+                    <div class="relative aspect-[4/5] rounded-3xl overflow-hidden">
+                        <img src="photo.jpg" alt="Kim Thiện" class="w-full h-full object-cover">
+                        <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/60 to-transparent">
+                        </div>
+                    </div>
+
+                    <!-- floating card -->
+                    <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600">
+                            <i class="ph-fill ph-paint-brush text-xl"></i>
+                        </div>
+
+                        <div>
+                            <p class="text-sm text-gray-500">Specialized in</p>
+                            <p class="font-semibold text-gray-900">UX/UI Design</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</body>
+
+</html>
