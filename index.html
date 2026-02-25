@@ -8,6 +8,7 @@
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
 </head>
 
 <body>
@@ -95,7 +96,7 @@
                 <div class="relative">
                     <!-- img -->
                     <div class="relative aspect-[4/5] rounded-3xl overflow-hidden">
-                        <img src="photo.jpg" alt="Kim Thiện" class="w-full h-full object-cover">
+                        <img src="assets/hero.jpg" alt="Kim Thiện" class="w-full h-full object-cover">
                         <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/60 to-transparent">
                         </div>
                     </div>
@@ -119,6 +120,165 @@
     </section>
 
     <!-- ==================== WORK SECTION ==================== -->
+    <section id="work" class="py-20 lg:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- section header -->
+            <div class="mb-16 lg:mb-24">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Featured Work</h2>
+                <p class="text-lg text-gray-600 max-w-2xl">
+                    A collection of projects that showcase my expertise in UI/UX design, mobile development, and web
+                    applications across various industries.
+                </p>
+            </div>
+
+            <!-- project list -->
+            <div class="space-y-24 lg:space-y-32">
+                <!-- project 1 : text left, image right-->
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                    <!-- content col -->
+                    <div class="space-y-6">
+                        <!-- category badge -->
+                        <div
+                            class="inline-flex items-center gap-2 px-3 py-1.5 bg-blue-100 text-blue-700 rounded-lg text-sm font-medium">
+                            <i class="ph ph-device-mobile"></i>
+                            <span>iOS & Android</span>
+                        </div>
+                        <!-- project title -->
+                        <h3 class="text-3xl font-bold text-gray-900">HealthTrack Pro</h3>
+                        <!-- description -->
+                        <p class="text-gray-600 leading-relaxed">
+                            A comprehensive health monitoring application that helps users track their
+                            daily activities, sleep patterns, and nutrition. The app features AI-powered
+                            insights and personalized recommendations, resulting in a 40% increase in
+                            user retention compared to competitors.
+                        </p>
+                        <!-- tag -->
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">User Research</span>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">UI Design</span>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">React Native</span>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">Firebase</span>
+                        </div>
+                        <!-- link -->
+                        <a href="#"
+                            class="inline-flex items-center gap-2 text-blue-600 font-medium hover:text-blue-700 transition-colors group">
+                            View Case Study
+                            <i class="ph ph-arrow-square-out"></i>
+                        </a>
+                    </div>
+
+                    <!-- image col -->
+                    <div class="relative">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-500 rounded-3xl transform rotate-3 opacity-20">
+                        </div>
+                        <div class="relative overflow-hidden rounded-3xl border border-gray-200 shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?w=800&h=600&fit=crop"
+                                alt="HealthTrack Pro App"
+                                class="w-full h-80 object-cover hover:scale-105 transition-transform duration-500">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- project 2: image left - text right (zig-zag) -->
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                    <!-- image col -->
+                    <div class="relative lg:order-1">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-3xl transform -rotate-2 opacity-20">
+                        </div>
+                        <div class="relative overflow-hidden rounded-3xl border border-gray-200 shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
+                                alt="EcoDashboard Platform"
+                                class="w-full h-80 object-cover hover:scale-105 transition-transform duration-500">
+                        </div>
+                    </div>
+
+                    <!-- content col -->
+                    <div class="space-y-6 lg:order-2">
+                        <!-- category badge -->
+                        <div
+                            class="inline-flex items-center gap-2 px-3 py-1.5 bg-emerald-100 text-emerald-700 rounded-lg text-sm font-medium">
+                            <i class="ph ph-google-chrome-logo"></i>
+                            <span>Web Platform</span>
+                        </div>
+                        <!-- project title -->
+                        <h3 class="text-3xl font-bold text-gray-900">EcoDashboard</h3>
+                        <!-- description -->
+                        <p class="text-gray-600 leading-relaxed">
+                            An analytics dashboard for environmental monitoring agencies. The platform
+                            processes real-time data from 500+ sensors, presenting complex datasets
+                            through intuitive visualizations. Reduced report generation time by 60%
+                            and improved decision-making efficiency for stakeholders.
+                        </p>
+                        <!-- tag -->
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">Data Viz</span>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">React</span>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">D3.js</span>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">Node.js</span>
+                        </div>
+                        <!-- link -->
+                        <a href="#"
+                            class="inline-flex items-center gap-2 text-emerald-600 font-medium hover:text-emerald-700 transition-colors group">
+                            View Case Study
+                            <i class="ph ph-arrow-square-out"></i>
+                        </a>
+                    </div>
+
+
+                </div>
+
+                <!-- project 3 : text left, image right-->
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                    <!-- content col -->
+                    <div class="space-y-6">
+                        <!-- category badge -->
+                        <div
+                            class="inline-flex items-center gap-2 px-3 py-1.5 bg-purple-100 text-purple-700 rounded-lg text-sm font-medium">
+                            <i class="ph ph-three-d"></i>
+                            <span>3D Design</span>
+                        </div>
+                        <!-- project title -->
+                        <h3 class="text-3xl font-bold text-gray-900">Nike Air Campaign</h3>
+                        <!-- description -->
+                        <p class="text-gray-600 leading-relaxed">
+                            A groundbreaking 3D marketing campaign featuring interactive product
+                            showcases. Users can explore shoe models in 360-degree view with AR
+                            try-on capabilities. The campaign generated 2M+ interactions within
+                            the first month and increased conversion rates by 25%.
+                        </p>
+                        <!-- tag -->
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">3D Modeling</span>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">Three.js</span>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">AR</span>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">Motion</span>
+                        </div>
+                        <!-- link -->
+                        <a href="#"
+                            class="inline-flex items-center gap-2 text-purple-600 font-medium hover:text-purple-700 transition-colors group">
+                            View Case Study
+                            <i class="ph ph-arrow-square-out"></i>
+                        </a>
+                    </div>
+
+                    <!-- image col -->
+                    <div class="relative">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-purple-400 to-pink-500 rounded-3xl transform rotate-2 opacity-20">
+                        </div>
+                        <div class="relative overflow-hidden rounded-3xl border border-gray-200 shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&h=600&fit=crop"
+                                alt="Nike Air Campaign"
+                                class="w-full h-80 object-cover hover:scale-105 transition-transform duration-500">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
 
     <!-- ==================== ABOUT SECTION ==================== -->
     <section id="about" class="py-20 lg:py-24">
@@ -151,9 +311,9 @@
                     </div>
 
                     <!-- info grid -->
-                     <div class="grid grid-cols-2 gap-6 pt-4">
+                    <div class="grid grid-cols-2 gap-6 pt-4">
                         <!-- location -->
-                         <div class="space-y-2">
+                        <div class="space-y-2">
                             <h3 class="text-sm font-semibold uppercase tracking-wider text-gray-500">
                                 Location
                             </h3>
@@ -161,10 +321,10 @@
                                 <i class="ph ph-map-pin"></i>
                                 <span class="font-medium">Tan Son, TP Ho Chi Minh, Vietnam</span>
                             </div>
-                         </div>
+                        </div>
 
-                         <!-- experience -->
-                          <div class="space-y-2">
+                        <!-- experience -->
+                        <div class="space-y-2">
                             <h3 class="text-sm font-semibold uppercase tracking-wider text-gray-500">
                                 Experience
                             </h3>
@@ -172,32 +332,40 @@
                                 <i class="ph ph-calendar-blank"></i>
                                 <span class="font-medium">3+ years</span>
                             </div>
-                          </div>
-                     </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- right col -->
-                 <div class="grid grid-cols-2 gap-4">
+                <div class="grid grid-cols-2 gap-4">
                     <!-- col 1 -->
-                     <div class="flex flex-col gap-4">
+                    <div class="flex flex-col gap-4">
                         <div class="overflow-hidden rounded-2xl">
-                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=500&fit=crop" alt="workspace" class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300">
+                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=500&fit=crop"
+                                alt="workspace"
+                                class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300">
                         </div>
                         <div class="overflow-hidden rounded-2xl">
-                           <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" alt="Design Process" class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop"
+                                alt="Design Process"
+                                class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300">
                         </div>
-                     </div>
+                    </div>
 
-                     <!-- col 2 (offset pt-8)-->
-                      <div class="flex flex-col gap-4 pt-8">
+                    <!-- col 2 (offset pt-8)-->
+                    <div class="flex flex-col gap-4 pt-8">
                         <div class="overflow-hidden rounded-2xl">
-                            <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?w=400&h=400&fit=crop" alt="Coffee and Code" class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300">
+                            <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?w=400&h=400&fit=crop"
+                                alt="Coffee and Code"
+                                class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300">
                         </div>
                         <div class="overflow-hidden rounded-2xl">
-                            <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=400&h=500&fit=crop" alt="Creative Work" class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300">
+                            <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=400&h=500&fit=crop"
+                                alt="Creative Work"
+                                class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300">
                         </div>
-                      </div>
-                 </div>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -205,6 +373,488 @@
     </section>
 
     <!-- ==================== EXPERIENCE SECTION ==================== -->
+    <section id="experience">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- section header -->
+            <div class="mb-16 lg:mb-24">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Experience</h2>
+                <p class="text-lg text-gray-600 max-w-2xl">
+                    My professional journey through the years, building products that impact millions of users.
+                </p>
+            </div>
+
+            <!-- timeline container -->
+            <div class="relative experience-timeline">
+                <!-- static timeline line -->
+                <div class=" absolute left-4 lg:left-1/2 lg:-translate-x-1/2 top-0 bottom-0 w-px bg-gray-200"></div>
+                <!-- progress line -->
+                <div id="progress-line"
+                    class="absolute left-4 lg:left-1/2 lg:-translate-x-1/2 top-0 w-px bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 h-0 transition-all duration-100">
+                </div>
+                <!-- experience items -->
+                <div class="space-y-12 lg:space-y-16">
+                    <!-- experience 1 -->
+                    <div class="relative experience-item" data-index="0">
+                        <!-- timeline dot -->
+                        <div
+                            class="timeline-dot absolute left-4 lg:left-1/2 lg:-translate-x-1/2 w-3 h-3 bg-gray-300 rounded-full border-2 border-white shadow transition-all duration-300 top-6 z-10">
+                        </div>
+                        <!-- content card -->
+                        <div class="ml-12 lg:ml-0 lg:grid lg:grid-cols-2 lg:gap-12 items-center group">
+                            <!-- left side -->
+                            <div class="hidden lg:block"></div>
+                            <!-- right side -->
+                            <div
+                                class="bg-white rounded-2xl p-6 lg:p-8 shadow-sm border border-gray-100 hover:shadow-lg hover:border-blue-200 transition-all duration-300">
+                                <!-- header row -->
+                                <div class="flex flex-col sm:flex-row sm:justify-between sm: items-start gap-4 mb-4">
+                                    <!-- company & title -->
+                                    <div class="flex items-start gap-4">
+                                        <!-- company logo -->
+                                        <div
+                                            class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center text-white font-bold text-xl- shrink-0">
+                                            M</div>
+                                        <div>
+                                            <h3 class="text-xl font-bold text-gray-900">Senior Product Designer</h3>
+                                            <p class="text-gray-600 font-medium">Meta</p>
+                                        </div>
+                                    </div>
+                                    <!-- date & duration -->
+                                    <div class="text-right shrink-0">
+                                        <p class="text-sm font-semibold text-gray-900">2021 - Present</p>
+                                        <p class="text-xs text-gray-500">3 yrs 2 mos</p>
+                                    </div>
+                                </div>
+                                <!-- description -->
+                                <p class="text-gray-600 leading-relaxed mb-4">
+                                    Leading design initiatives for Instagram's creator monetization features.
+                                    Collaborated with cross-functional teams to launch Reels monetization,
+                                    resulting in 40% increase in creator retention. Mentored junior designers
+                                    and established design system standards.
+                                </p>
+                                <!-- skill tags -->
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">Mobile
+                                        Design</span>
+                                    <span
+                                        class="px-3 py-1 bg-purple-50 text-purple-700 rounded-full text-sm font-medium">Design
+                                        Systems</span>
+                                    <span
+                                        class="px-3 py-1 bg-green-50 text-green-700 rounded-full text-sm font-medium">A/B
+                                        Testing</span>
+                                </div>
+                                <!-- hover icon -->
+                                <div class="mt-4 flex justify-end opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <i class="ph ph-arrow-right text-blue-500 text-xl"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- experience 2 -->
+                    <div class="relative experience-item" data-index="1">
+                        <!-- timeline dot -->
+                        <div
+                            class="timeline-dot absolute left-4 lg:left-1/2 lg:-translate-x-1/2 w-3 h-3 bg-gray-300 rounded-full border-2 border-white shadow transition-all duration-300 top-6 z-10">
+                        </div>
+                        <!-- content card -->
+                        <div class="ml-12 lg:ml-0 lg:grid lg:grid-cols-2 lg:gap-12 items-center group">
+                            <!-- left side -->
+                            <div
+                                class="bg-white rounded-2xl p-6 lg:p-8 shadow-sm border border-gray-100 hover:shadow-lg hover:border-pink-200 transition-all duration-300 lg:order-1">
+
+                                <!-- header row -->
+                                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 mb-4">
+                                    <!-- company & title -->
+                                    <div class="flex items-start gap-4">
+                                        <!-- company logo -->
+                                        <div
+                                            class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center text-white font-bold text-xl shrink-0">
+                                            I
+                                        </div>
+                                        <div>
+                                            <h3 class="text-xl font-bold text-gray-900">Product Designer</h3>
+                                            <p class="text-gray-600 font-medium">Instagram</p>
+                                        </div>
+                                    </div>
+                                    <!-- date & duration -->
+                                    <div class="text-right shrink-0">
+                                        <p class="text-sm font-semibold text-gray-900">2019 - 2021</p>
+                                        <p class="text-xs text-gray-500">2 yrs</p>
+                                    </div>
+                                </div>
+                                <!-- description -->
+                                <p class="text-gray-600 leading-relaxed mb-4">
+                                    Redesigned the Stories creation flow, improving daily active usage by 25%.
+                                    Conducted user research across 5 countries to understand creator needs.
+                                    Shipped 12 major features including interactive stickers and music integration.
+                                </p>
+                                <!-- skill tags -->
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="px-3 py-1 bg-pink-50 text-pink-700 rounded-full text-sm font-medium">User
+                                        Research</span>
+                                    <span
+                                        class="px-3 py-1 bg-orange-50 text-orange-700 rounded-full text-sm font-medium">Prototyping</span>
+                                    <span
+                                        class="px-3 py-1 bg-red-50 text-red-700 rounded-full text-sm font-medium">Motion
+                                        Design</span>
+                                </div>
+                                <!-- hover icon -->
+                                <div class="mt-4 flex justify-end opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <i class="ph ph-arrow-right text-pink-500 text-xl"></i>
+                                </div>
+                            </div>
+
+                            <!-- right side -->
+                            <div class="hidden lg:block lg:order-2"></div>
+                        </div>
+                    </div>
+
+                    <!-- Experience 3 -->
+                    <div class="relative experience-item" data-index="2">
+                        <!-- Timeline Dot -->
+                        <div
+                            class="timeline-dot absolute left-4 lg:left-1/2 lg:-translate-x-1/2 w-3 h-3 bg-gray-300 rounded-full border-2 border-white shadow transition-all duration-300 top-6 z-10">
+                        </div>
+
+                        <!-- Content Card -->
+                        <div class="ml-12 lg:ml-0 lg:grid lg:grid-cols-2 lg:gap-12 items-center group">
+
+                            <!-- Left side (Empty on desktop for odd items) -->
+                            <div class="hidden lg:block"></div>
+
+                            <!-- Right side (Card) -->
+                            <div
+                                class="bg-white rounded-2xl p-6 lg:p-8 shadow-sm border border-gray-100 hover:shadow-lg hover:border-emerald-200 transition-all duration-300">
+
+                                <!-- Header Row -->
+                                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 mb-4">
+
+                                    <!-- Company & Title -->
+                                    <div class="flex items-start gap-4">
+                                        <!-- Company Logo -->
+                                        <div
+                                            class="w-12 h-12 bg-emerald-600 rounded-xl flex items-center justify-center text-white font-bold text-xl shrink-0">
+                                            S
+                                        </div>
+                                        <div>
+                                            <h3 class="text-xl font-bold text-gray-900">UI/UX Designer</h3>
+                                            <p class="text-gray-600 font-medium">Stripe</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Date & Duration -->
+                                    <div class="text-right shrink-0">
+                                        <p class="text-sm font-semibold text-gray-900">2017 - 2019</p>
+                                        <p class="text-xs text-gray-500">2 yrs</p>
+                                    </div>
+                                </div>
+
+                                <!-- Description -->
+                                <p class="text-gray-600 leading-relaxed mb-4">
+                                    Designed checkout experiences processing $10B+ annually. Created
+                                    accessibility-compliant components used across 50+ products.
+                                    Collaborated with engineers to implement design tokens and reduce
+                                    design-to-dev handoff time by 60%.
+                                </p>
+
+                                <!-- Skills Tags -->
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-sm font-medium">Web
+                                        Design</span>
+                                    <span
+                                        class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">Accessibility</span>
+                                    <span
+                                        class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">Design
+                                        Tokens</span>
+                                </div>
+
+                                <!-- Hover Icon -->
+                                <div class="mt-4 flex justify-end opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <i class="ph ph-arrow-right text-emerald-500 text-xl"></i>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Experience 4 -->
+                    <div class="relative experience-item" data-index="3">
+                        <!-- Timeline Dot -->
+                        <div
+                            class="timeline-dot absolute left-4 lg:left-1/2 lg:-translate-x-1/2 w-3 h-3 bg-gray-300 rounded-full border-2 border-white shadow transition-all duration-300 top-6 z-10">
+                        </div>
+
+                        <!-- Content Card -->
+                        <div class="ml-12 lg:ml-0 lg:grid lg:grid-cols-2 lg:gap-12 items-center group">
+
+                            <!-- Left side (Card for even items) -->
+                            <div
+                                class="bg-white rounded-2xl p-6 lg:p-8 shadow-sm border border-gray-100 hover:shadow-lg hover:border-amber-200 transition-all duration-300 lg:order-1">
+
+                                <!-- Header Row -->
+                                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 mb-4">
+
+                                    <!-- Company & Title -->
+                                    <div class="flex items-start gap-4">
+                                        <!-- Company Logo -->
+                                        <div
+                                            class="w-12 h-12 bg-amber-500 rounded-xl flex items-center justify-center text-white font-bold text-xl shrink-0">
+                                            A
+                                        </div>
+                                        <div>
+                                            <h3 class="text-xl font-bold text-gray-900">Junior Designer</h3>
+                                            <p class="text-gray-600 font-medium">Airbnb</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Date & Duration -->
+                                    <div class="text-right shrink-0">
+                                        <p class="text-sm font-semibold text-gray-900">2015 - 2017</p>
+                                        <p class="text-xs text-gray-500">2 yrs</p>
+                                    </div>
+                                </div>
+
+                                <!-- Description -->
+                                <p class="text-gray-600 leading-relaxed mb-4">
+                                    Started my journey working on the host onboarding flow. Designed
+                                    illustration systems and iconography used across mobile and web platforms.
+                                    Learned the fundamentals of user-centered design through intensive
+                                    mentorship and real-world projects.
+                                </p>
+
+                                <!-- Skills Tags -->
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="px-3 py-1 bg-amber-50 text-amber-700 rounded-full text-sm font-medium">Visual
+                                        Design</span>
+                                    <span
+                                        class="px-3 py-1 bg-rose-50 text-rose-700 rounded-full text-sm font-medium">Illustration</span>
+                                    <span
+                                        class="px-3 py-1 bg-indigo-50 text-indigo-700 rounded-full text-sm font-medium">Iconography</span>
+                                </div>
+
+                                <!-- Hover Icon -->
+                                <div class="mt-4 flex justify-end opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <i class="ph ph-arrow-right text-amber-500 text-xl"></i>
+                                </div>
+                            </div>
+
+                            <!-- Right side (Empty on desktop for even items) -->
+                            <div class="hidden lg:block lg:order-2"></div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ==================== FAQ ==================== -->
+    <section id="faq" class="py-20 lg:py-24 bg-gray-900 relative overflow-hidden">
+        <!-- background decor -->
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- section badge -->
+            <div
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-700 bg-gray-800/50 mb-8">
+                <span class="w-2 h-2 bg-sky-400 rounded-full animate-pulse"></span>
+                <span class="text-sm font-medium text-gray-300">FAQ</span>
+            </div>
+
+            <!-- main grid -->
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+                <!-- left col -->
+                <div class="space-y-8">
+                    <!-- title gradient -->
+                    <div class="space-y-4">
+                        <h2 class="text-4xl lg:text-5xl font-bold text-white leading-tight">Question & <br>
+                            <span
+                                class="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">Answers</span>
+                        </h2>
+                        <p class="text-gray-400 text-lg max-w-md">
+                            Everything you need to know about working together. Can't find what you're looking for? Just
+                            ask!
+                        </p>
+                    </div>
+                    <!-- testimonial -->
+                    <div
+                        class="bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10 shadow-2xl ring-1 ring-white/10 max-w-md">
+                        <i class="ph ph-quotes text-3xl text-purple-400 mb-4 block"></i>
+                        <!-- start -->
+                        <div class="flex gap-1 mb-3">
+                            <i class="ph-fill ph-star text-amber-400 text-lg"></i>
+                            <i class="ph-fill ph-star text-amber-400 text-lg"></i>
+                            <i class="ph-fill ph-star text-amber-400 text-lg"></i>
+                            <i class="ph-fill ph-star text-amber-400 text-lg"></i>
+                            <i class="ph-fill ph-star text-amber-400 text-lg"></i>
+                        </div>
+                        <!-- testimonial text -->
+                        <p class="text-gray-200 leading-relaxed mb-6">
+                            "Working with this designer was an absolute game-changer. The attention to detail and
+                            creative
+                            solutions brought our vision to life beyond expectations."
+                        </p>
+                        <!-- author -->
+                        <div class="flex items-center gap-4">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop"
+                                alt="Sarah Chen" class="w-12 h-12 rounded-full object-cover ring-2 ring-purple-400/50">
+                            <div>
+                                <p class="font-semibold text-white">Sarah Chen</p>
+                                <p class="text-sm text-gray-400">CEO at TechStart</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CTA buttons -->
+                    <div class="flex flex-wrap gap-4">
+                        <button
+                            class="px-6 py-3 bg-white text-gray-900 rounded-full font-medium hover:bg-gray-100 transition-colors flex items-center gap-2">
+                            <i class="ph ph-rocket-launch"></i>
+                            Start a Project
+                        </button>
+                        <button
+                            class="px-6 py-3 bg-white/5 backdrop-blur text-white border border-white/20 rounded-full font-medium hover:bg-white/10 transition-colors flex items-center gap-2">
+                            <i class="ph ph-folder"></i>
+                            View Portfolio
+                        </button>
+                    </div>
+                </div>
+
+                <!-- right col -->
+                <div class="space-y-4">
+                    <!-- FAQ item 1 -->
+                    <div class="faq-item bg-gray-800/50 rounded-2xl border border-gray-700 hover:border-gray-600 transition-colors overflow-hidden"
+                        data-faq>
+                        <!-- question -->
+                        <button class="faq-trigger w-full flex items-center justify-between p-6 text-left group" data-accordion-trigger>
+                            <span class="text-lg font-medium text-white pr-4">What is your design process?</span>
+                            <span
+                                class="flex-shrink-0 w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center group-hover:bg-gray-600 transition-colors">
+                                <i class="ph ph-plus text-white transition-transform duration-300" data-icon></i>
+                            </span>
+                        </button>
+                        <!-- answer -->
+                        <div class="grid transition-all duration-300 ease-out" style="grid-template-rows: 0fr;"
+                            data-accordion-content>
+                            <div class="overflow-hidden">
+                                <div class="px-6 pb-6 text-gray-400 leading-relaxed">
+                                    My design process follows a user-centered approach: Discovery (understanding your
+                                    goals
+                                    and users),
+                                    Strategy (defining the problem), Design (creating solutions), and Delivery (handoff
+                                    with
+                                    full documentation).
+                                    Each phase involves close collaboration with stakeholders.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-item bg-gray-800/50 rounded-2xl border border-gray-700 hover:border-gray-600 transition-colors overflow-hidden"
+                        data-faq>
+                        <button class="faq-trigger w-full flex items-center justify-between p-6 text-left group"
+                            data-accordion-trigger>
+                            <span class="text-lg font-semibold text-white pr-4">How long does a typical project
+                                take?</span>
+                            <span
+                                class="flex-shrink-0 w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center group-hover:bg-gray-600 transition-colors">
+                                <i class="ph ph-plus text-white transition-transform duration-300" data-icon></i>
+                            </span>
+                        </button>
+                        <div class="grid transition-all duration-300 ease-out" style="grid-template-rows: 0fr;"
+                            data-accordion-content>
+                            <div class="overflow-hidden">
+                                <div class="px-6 pb-6 text-gray-400 leading-relaxed">
+                                    Project timelines vary based on scope. A simple landing page might take 2-3 weeks,
+                                    while a complex mobile app could take 3-4 months. I'll provide a detailed timeline
+                                    during our initial consultation based on your specific requirements.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-item bg-gray-800/50 rounded-2xl border border-gray-700 hover:border-gray-600 transition-colors overflow-hidden"
+                        data-faq>
+                        <button class="faq-trigger w-full flex items-center justify-between p-6 text-left group"
+                            data-accordion-trigger>
+                            <span class="text-lg font-semibold text-white pr-4">What are your rates?</span>
+                            <span
+                                class="flex-shrink-0 w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center group-hover:bg-gray-600 transition-colors">
+                                <i class="ph ph-plus text-white transition-transform duration-300" data-icon></i>
+                            </span>
+                        </button>
+                        <div class="grid transition-all duration-300 ease-out" style="grid-template-rows: 0fr;"
+                            data-accordion-content>
+                            <div class="overflow-hidden">
+                                <div class="px-6 pb-6 text-gray-400 leading-relaxed">
+                                    I offer both project-based pricing and hourly rates depending on your needs.
+                                    Project rates typically range from $5,000 for smaller websites to $25,000+ for
+                                    comprehensive product design. Contact me for a custom quote tailored to your
+                                    project.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="faq-item bg-gray-800/50 rounded-2xl border border-gray-700 hover:border-gray-600 transition-colors overflow-hidden"
+                        data-faq>
+                        <button class="faq-trigger w-full flex items-center justify-between p-6 text-left group"
+                            data-accordion-trigger>
+                            <span class="text-lg font-semibold text-white pr-4">Do you offer ongoing support?</span>
+                            <span
+                                class="flex-shrink-0 w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center group-hover:bg-gray-600 transition-colors">
+                                <i class="ph ph-plus text-white transition-transform duration-300" data-icon></i>
+                            </span>
+                        </button>
+                        <div class="grid transition-all duration-300 ease-out" style="grid-template-rows: 0fr;"
+                            data-accordion-content>
+                            <div class="overflow-hidden">
+                                <div class="px-6 pb-6 text-gray-400 leading-relaxed">
+                                    Yes! I offer maintenance packages and retainer agreements for clients who need
+                                    ongoing design support. This includes iterative improvements, A/B testing,
+                                    design system updates, and priority support for new features.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 5 -->
+                    <div class="faq-item bg-gray-800/50 rounded-2xl border border-gray-700 hover:border-gray-600 transition-colors overflow-hidden"
+                        data-faq>
+                        <button class="faq-trigger w-full flex items-center justify-between p-6 text-left group"
+                            data-accordion-trigger>
+                            <span class="text-lg font-semibold text-white pr-4">What tools do you use?</span>
+                            <span
+                                class="flex-shrink-0 w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center group-hover:bg-gray-600 transition-colors">
+                                <i class="ph ph-plus text-white transition-transform duration-300" data-icon></i>
+                            </span>
+                        </button>
+                        <div class="grid transition-all duration-300 ease-out" style="grid-template-rows: 0fr;"
+                            data-accordion-content>
+                            <div class="overflow-hidden">
+                                <div class="px-6 pb-6 text-gray-400 leading-relaxed">
+                                    My primary tools include Figma for UI/UX design, FigJam for workshops,
+                                    Principle & Protopie for prototyping, and Notion for documentation.
+                                    I'm also comfortable with Adobe Creative Suite and can adapt to your team's
+                                    workflow.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- ==================== CONTACT SECTION ==================== -->
     <section id="contact" class="py-24 md:py-32 px-6 bg-white">
@@ -236,6 +886,115 @@
             </div>
         </div>
     </section>
+
+    <!-- ==================== TIMELINE SCROLL ANIMATION SCRIPT ==================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const progressLine = document.getElementById('progress-line');
+            const timeline = document.querySelector('.experience-timeline');
+            const items = document.querySelectorAll('.experience-item');
+            const dots = document.querySelectorAll('.timeline-dot');
+
+            let ticking = false;
+
+            function updateTimeline() {
+                if (!timeline) return;
+
+                const rect = timeline.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                const timelineTop = rect.top;
+                const timelineHeight = rect.height;
+
+                //calculate
+                let progress = 0;
+
+                if (timelineTop < windowHeight * 0.5) {
+                    progress = (windowHeight * 0.5 - timelineTop) / (timelineHeight + windowHeight * 0.3);
+                    progress = Math.min(Math.max(progress, 0), 1);
+                }
+
+                //update progress line height
+                if (progressLine) {
+                    progressLine.style.height = (progress * 100) + '%';
+                }
+
+                //update dot
+                items.forEach((item, index) => {
+                    const itemRect = item.getBoundingClientRect();
+                    const itemCenter = itemRect.top + itemRect.height / 2;
+                    const viewportCenter = windowHeight / 2;
+
+                    //check if item near center viewport
+                    if (Math.abs(itemCenter - viewportCenter) < itemRect.height / 2 + 100) {
+                        dots[index].classList.remove('bg-gray-300', 'w-3', 'h-3');
+                        dots[index].classList.add('bg-blue-500', 'w-4', 'h-4', 'ring-4', 'ring-blue-200', 'scale-125');
+                    } else {
+                        dots[index].classList.add('bg-gray-300', 'w-3', 'h-3');
+                        dots[index].classList.remove('bg-blue-500', 'w-4', 'h-4', 'ring-4', 'ring-blue-200', 'scale-125');
+                    }
+                })
+
+                ticking = false;
+            }
+
+            //listen scroll
+            window.addEventListener('scroll', function () {
+                if (!ticking) {
+                    window.requestAnimationFrame(updateTimeline);
+                    ticking = true;
+                }
+            })
+
+            //init update
+            updateTimeline();
+        });
+    </script>
+
+    <!-- ==================== Accordion Script ==================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const faqItems = document.querySelectorAll('[data-faq]');
+
+            faqItems.forEach(item => {
+                const trigger = item.querySelector('[data-accordion-trigger]');
+                const content = item.querySelector('[data-accordion-content]');
+                const icon = item.querySelector('[data-icon]');
+
+                trigger.addEventListener('click', () => {
+                    const isOpen = content.style.gridTemplateRows === '1fr';
+
+                    // Close all other items (remove if want multiple open)
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            const otherContent = otherItem.querySelector('[data-accordion-content]');
+                            const otherIcon = otherItem.querySelector('[data-icon]');
+                            otherContent.style.gridTemplateRows = '0fr';
+                            otherIcon.classList.remove('ph-minus');
+                            otherIcon.classList.add('ph-plus');
+                            otherIcon.style.transform = 'rotate(0deg)';
+                        }
+                    });
+
+                    // Toggle current item
+                    if (isOpen) {
+                        content.style.gridTemplateRows = '0fr';
+                        icon.classList.remove('ph-minus');
+                        icon.classList.add('ph-plus');
+                        icon.style.transform = 'rotate(0deg)';
+                        item.classList.remove('border-purple-500/50');
+                        item.classList.add('border-gray-700');
+                    } else {
+                        content.style.gridTemplateRows = '1fr';
+                        icon.classList.remove('ph-plus');
+                        icon.classList.add('ph-minus');
+                        icon.style.transform = 'rotate(180deg)';
+                        item.classList.remove('border-gray-700');
+                        item.classList.add('border-purple-500/50');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
