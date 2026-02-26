@@ -4,780 +4,724 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Kim Thiện 2026</title>
+    <title>Kim Thiện - Portfolio</title>
+    <meta name="description" content="Nguyễn Kim Thiện - Fullstack Developer với 1+ năm kinh nghiệm phát triển ứng dụng web và desktop.">
     <link rel="icon" type="image/png" href="assets/favicon.png">
+    
+    <!-- Tailwind CSS v4 -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <!-- Phosphor Icons -->
     <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
-    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+    
+    <style type="text/tailwindcss">
+        @theme {
+            --color-primary: #18181B;
+            --color-secondary: #3F3F46;
+            --color-accent: #2563EB;
+            --color-bg: #FAFAFA;
+            --color-surface: #FFFFFF;
+            --color-text: #09090B;
+            --color-muted: #71717A;
+            --color-border: #E4E4E7;
+        }
+        
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Subtle fade-in animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+        
+        .animate-delay-100 { animation-delay: 0.1s; }
+        .animate-delay-200 { animation-delay: 0.2s; }
+        .animate-delay-300 { animation-delay: 0.3s; }
+        
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            .animate-fade-in {
+                animation: none;
+                opacity: 1;
+                transform: none;
+            }
+        }
+        
+        /* Card hover effect */
+        .project-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Link hover */
+        .link-hover {
+            transition: color 0.2s ease;
+        }
+        
+        .link-hover:hover {
+            color: var(--color-accent);
+        }
+        
+        /* Button styles */
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: white;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--color-secondary);
+            transform: translateY(-1px);
+        }
+        
+        .btn-outline {
+            border: 1px solid var(--color-border);
+            transition: border-color 0.2s ease, background-color 0.2s ease;
+        }
+        
+        .btn-outline:hover {
+            border-color: var(--color-primary);
+            background-color: #FAFAFA;
+        }
+        
+        /* Navigation link */
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--color-primary);
+            transition: width 0.2s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
 </head>
 
-<body>
-    <header class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md border-b border-gray-200 z-50">
-        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-            <!-- logo -->
-            <div class="flex items-center gap-3">
-                <div
-                    class="w-10 h-10 border-2 border-gray-900 rounded-lg flex items-center justify-center font-bold text-lg">
-                    KT
-                </div>
-                <span class="font-semibold text-lg">Kim Thiện</span>
+<body class="bg-bg text-text antialiased">
+    <!-- Navigation -->
+    <header class="fixed top-0 left-0 right-0 bg-surface/95 backdrop-blur-sm border-b border-border z-50">
+        <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-primary rounded-lg font-bold text-xl tracking-tight hover:bg-primary hover:text-white transition-all duration-300">
+                KT
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#work" class="nav-link text-sm font-medium text-secondary">Dự Án</a>
+                <a href="#expertise" class="nav-link text-sm font-medium text-secondary">Kỹ Năng</a>
+                <a href="#experience" class="nav-link text-sm font-medium text-secondary">Kinh Nghiệm</a>
+                <a href="#about" class="nav-link text-sm font-medium text-secondary">Giới Thiệu</a>
             </div>
-            <!-- center -->
-            <nav class="hidden md:flex items-center gap-8">
-                <a href="#work">Dự Án</a>
-                <a href="#about">Giới Thiệu</a>
-                <a href="#experience">Kinh Nghiệm</a>
-                <a href="#contact">Liên Hệ</a>
-            </nav>
-
-            <!-- button download resume -->
-            <button class="flex items-center gap-2 px-4 py-2 bg-gray-900 text-white rounded-full">
+            
+            <!-- CTA Button -->
+            <a href="assets/cv.pdf" target="_blank" download class="hidden md:inline-flex items-center gap-2 px-4 py-2 bg-primary text-white text-sm font-medium rounded-full hover:bg-secondary transition-colors">
                 <i class="ph ph-download-simple"></i>
                 Resume
+            </a>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 text-secondary hover:text-primary transition-colors">
+                <i class="ph ph-list text-2xl"></i>
             </button>
+        </nav>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-surface border-t border-border">
+            <div class="px-6 py-4 space-y-4">
+                <a href="#work" class="block text-secondary hover:text-primary transition-colors">Dự Án</a>
+                <a href="#expertise" class="block text-secondary hover:text-primary transition-colors">Kỹ Năng</a>
+                <a href="#experience" class="block text-secondary hover:text-primary transition-colors">Kinh Nghiệm</a>
+                <a href="#about" class="block text-secondary hover:text-primary transition-colors">Giới Thiệu</a>
+                <a href="#contact" class="inline-flex items-center gap-2 px-4 py-2 bg-primary text-white text-sm font-medium rounded-full">
+                    <i class="ph ph-download-simple"></i>
+                    Resume
+                </a>
+            </div>
         </div>
     </header>
 
-    <!-- ==================== HERO SECTION ==================== -->
-    <section id="hero" class="pt-32 pb-20 px-6">
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 lg:pt-40 lg:pb-32 px-6">
         <div class="max-w-6xl mx-auto">
-            <!-- grid -->
-            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-                <!-- left -->
-                <div class="space-y-8"> <!--Tự động thêm margin-bottom 32px cho mỗi con-->
-                    <!-- badge status -->
-                    <div
-                        class="inline-flex items-center gap-2 px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-medium">
-                        <i class="ph ph-lightning"></i>
-                        <span>Available for work</span>
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                <!-- Content -->
+                <div class="lg:col-span-7 space-y-8">
+                    <!-- Availability Badge -->
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-green-50 border border-green-100 rounded-full text-sm font-medium text-green-700 opacity-0 animate-fade-in">
+                        <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                        Available for work
                     </div>
-
-                    <!-- title -->
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                        Xin chào, tôi là <br>
-                        Kim Thiện <br>
-                        <span class="text-blue-600">Fullstack Developer</span>
-                    </h1>
-
-                    <!-- introduce -->
-                    <p class="text-lg text-gray-600 max-w-lg leading-relaxed">Lập trình viên đầy nhiệt huyết, trách nhiệm và tận tâm. Đam mê phát triển các ứng dụng sáng tạo, hấp dẫn và đặc biệt là các ứng dụng hướng tới lợi ích cộng đồng. Phát triển tốt nhất trong môi trường khuyến khích học hỏi và mang lại cơ hội phát triển chuyên môn.</p>
-
-                    <!-- button -->
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#work"
-                            class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition">
-                            <span>Xem Dự Án</span>
+                    
+                    <!-- Title -->
+                    <div class="space-y-4 opacity-0 animate-fade-in animate-delay-100">
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1]">
+                            Nguyễn Kim Thiện
+                        </h1>
+                        <p class="text-xl md:text-2xl text-muted font-medium">
+                            Fullstack Developer
+                        </p>
+                    </div>
+                    
+                    <!-- Positioning Statement -->
+                    <p class="text-lg text-secondary leading-relaxed max-w-xl opacity-0 animate-fade-in animate-delay-200">
+                        Là một lập trình viên đầy nhiệt huyết, trách nhiệm và tận tâm, tôi đam mê phát triển các ứng dụng sáng tạo, hấp dẫn và đặc biệt các ứng dụng hướng tới lợi ích cộng đồng. Tôi phát triển tốt nhất trong môi trường khuyến khích học hỏi và mang lại cơ hội phát triển chuyên môn.
+                    </p>
+                    
+                    <!-- CTAs -->
+                    <div class="flex flex-wrap gap-4 opacity-0 animate-fade-in animate-delay-300">
+                        <a href="#work" class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-medium rounded-full hover:bg-secondary transition-colors">
+                            Xem Dự Án
                             <i class="ph ph-arrow-right"></i>
                         </a>
-
-                        <a href="#contact"
-                            class="inline-flex items-center justify-center gap-2 px-6 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition">
-                            <i class="ph ph-chat-circle-text"></i>
-                            <span>Liên Hệ</span>
+                        <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3 border border-border font-medium rounded-full btn-outline">
+                            Liên Hệ
                         </a>
                     </div>
-
-                    <!-- social links -->
-                    <div class="flex items-center gap-6 pt-4">
-                        <a href="https://github.com/kimthien128" target="_blank" class="text-gray-400 hover:text-gray-900 transition"><i
-                                class="ph ph-github-logo text-2xl"></i></a>
-                        <a href="mailto:kimthien128@gmail.com" class="text-gray-400 hover:text-gray-900 transition"><i
-                                class="ph ph-envelope text-2xl"></i></a>
-                    </div>
-                </div>
-
-                <!-- right -->
-                <div class="relative">
-                    <!-- img -->
-                    <div class="relative aspect-[4/5] rounded-3xl overflow-hidden">
-                        <img src="assets/hero.jpg" alt="Kim Thiện" class="w-full h-full object-cover">
-                        <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/60 to-transparent">
-                        </div>
-                    </div>
-
-                    <!-- floating card -->
-                    <div
-                        class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-4">
-                        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600">
-                            <i class="ph ph-code text-xl"></i>
-                        </div>
-
-                        <div>
-                            <p class="text-sm text-gray-500">Current Role</p>
-                            <p class="font-semibold text-gray-900">Fullstack Developer</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ==================== WORK SECTION ==================== -->
-    <section id="work" class="py-20 lg:py-24 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- section header -->
-            <div class="mb-16 lg:mb-24">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">Dự Án Nổi Bật</h2>
-                <p class="text-lg text-gray-600 max-w-2xl">
-                    Các dự án cá nhân và thực tế thể hiện kỹ năng phát triển Fullstack, từ ứng dụng Desktop, Web đến Extension và AI.
-                </p>
-            </div>
-
-            <!-- project list -->
-            <div class="space-y-24 lg:space-y-32">
-                <!-- project 1 : KT SpeakUp - text left, image right-->
-                <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-                    <!-- content col -->
-                    <div class="space-y-6">
-                        <!-- category badge -->
-                        <div
-                            class="inline-flex items-center gap-2 px-3 py-1.5 bg-blue-100 text-blue-700 rounded-lg text-sm font-medium">
-                            <i class="ph ph-device-mobile"></i>
-                            <span>Web Application</span>
-                        </div>
-                        <!-- project title -->
-                        <h3 class="text-3xl font-bold text-gray-900">KT SpeakUp</h3>
-                        <!-- description -->
-                        <p class="text-gray-600 leading-relaxed">
-                            Ứng dụng luyện nói tiếng Anh với AI, mô phỏng hội thoại một kèm một giữa người dùng và AI. 
-                            Hệ thống cho phép người học luyện tập trong môi trường phản hồi liên tục, giống như đang nhắn tin hoặc voice chat với người thật.
-                        </p>
-                        <!-- tag -->
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">Python</span>
-                            <span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">FastAPI</span>
-                            <span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">ReactJS</span>
-                            <span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">MongoDB</span>
-                            <span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">Material UI</span>
-                        </div>
-                        <!-- link -->
-                        <a href="https://speakup.ktstudio.vn/" target="_blank"
-                            class="inline-flex items-center gap-2 text-blue-600 font-medium hover:text-blue-700 transition-colors group">
-                            Xem Dự Án
-                            <i class="ph ph-arrow-square-out"></i>
+                    
+                    <!-- Social Links -->
+                    <div class="flex items-center gap-6 pt-4 opacity-0 animate-fade-in animate-delay-300">
+                        <a href="https://github.com/kimthien128" target="_blank" rel="noopener noreferrer" 
+                           class="text-muted hover:text-primary transition-colors" aria-label="GitHub">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
+                            </svg>
+                        </a>
+                        <a href="mailto:kimthien128@gmail.com" 
+                           class="text-muted hover:text-primary transition-colors" aria-label="Email">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
                         </a>
                     </div>
-
-                    <!-- image col -->
+                </div>
+                
+                <!-- Hero Image -->
+                <div class="lg:col-span-5 opacity-0 animate-fade-in animate-delay-200">
                     <div class="relative">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-500 rounded-3xl transform rotate-3 opacity-20">
+                        <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-gray-100">
+                            <img src="assets/hero.jpg" alt="Nguyễn Kim Thiện" 
+                                 class="w-full h-full object-cover">
                         </div>
-                        <div class="relative overflow-hidden rounded-3xl border border-gray-200 shadow-lg">
-                            <img src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?w=800&h=600&fit=crop"
-                                alt="KT SpeakUp App"
-                                class="w-full h-80 object-cover hover:scale-105 transition-transform duration-500">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- project 2: Logitrack - image left - text right (zig-zag) -->
-                <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-                    <!-- image col -->
-                    <div class="relative lg:order-1">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-3xl transform -rotate-2 opacity-20">
-                        </div>
-                        <div class="relative overflow-hidden rounded-3xl border border-gray-200 shadow-lg">
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
-                                alt="Logitrack Platform"
-                                class="w-full h-80 object-cover hover:scale-105 transition-transform duration-500">
-                        </div>
-                    </div>
-
-                    <!-- content col -->
-                    <div class="space-y-6 lg:order-2">
-                        <!-- category badge -->
-                        <div
-                            class="inline-flex items-center gap-2 px-3 py-1.5 bg-emerald-100 text-emerald-700 rounded-lg text-sm font-medium">
-                            <i class="ph ph-google-chrome-logo"></i>
-                            <span>Web Platform</span>
-                        </div>
-                        <!-- project title -->
-                        <h3 class="text-3xl font-bold text-gray-900">Logitrack</h3>
-                        <!-- description -->
-                        <p class="text-gray-600 leading-relaxed">
-                            Phần mềm hỗ trợ quản lý, điều phối đơn hàng, phương tiện, theo dõi GPS cho các công ty Logistics. 
-                            Thiết kế UI/UX cho giao diện Web & Mobile App, code landing page và phiên bản web, 
-                            phát triển Mini CRM fullstack để quản lý thông tin khách hàng.
-                        </p>
-                        <!-- tag -->
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">Figma</span>
-                            <span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">Bootstrap</span>
-                            <span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">VueJS</span>
-                            <span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">NestJS</span>
-                        </div>
-                        <!-- link -->
-                        <a href="https://logitrackvn.com/" target="_blank"
-                            class="inline-flex items-center gap-2 text-emerald-600 font-medium hover:text-emerald-700 transition-colors group">
-                            Xem Landing Page
-                            <i class="ph ph-arrow-square-out"></i>
-                        </a>
-                    </div>
-
-
-                </div>
-
-                <!-- project 3 : KT CEP - text left, image right-->
-                <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-                    <!-- content col -->
-                    <div class="space-y-6">
-                        <!-- category badge -->
-                        <div
-                            class="inline-flex items-center gap-2 px-3 py-1.5 bg-purple-100 text-purple-700 rounded-lg text-sm font-medium">
-                            <i class="ph ph-paint-brush"></i>
-                            <span>Adobe Extension</span>
-                        </div>
-                        <!-- project title -->
-                        <h3 class="text-3xl font-bold text-gray-900">KT CEP - Photoshop Extension</h3>
-                        <!-- description -->
-                        <p class="text-gray-600 leading-relaxed">
-                            Extension dành cho Adobe Photoshop, giúp tự động hóa các thao tác xử lý layer, layout, 
-                            và quản lý dữ liệu một cách nhanh chóng, tiện lợi. Hỗ trợ designer tăng năng suất làm việc 
-                            với các tính năng tự động hóa thao tác lặp lại.
-                        </p>
-                        <!-- tag -->
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">HTML</span>
-                            <span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">CSS</span>
-                            <span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">JavaScript</span>
-                            <span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">CEP</span>
-                        </div>
-                        <!-- link -->
-                        <a href="https://cep.ktstudio.vn/" target="_blank"
-                            class="inline-flex items-center gap-2 text-purple-600 font-medium hover:text-purple-700 transition-colors group">
-                            Xem Dự Án
-                            <i class="ph ph-arrow-square-out"></i>
-                        </a>
-                    </div>
-
-                    <!-- image col -->
-                    <div class="relative">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-br from-purple-400 to-pink-500 rounded-3xl transform rotate-2 opacity-20">
-                        </div>
-                        <div class="relative overflow-hidden rounded-3xl border border-gray-200 shadow-lg">
-                            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&h=600&fit=crop"
-                                alt="KT CEP Extension"
-                                class="w-full h-80 object-cover hover:scale-105 transition-transform duration-500">
+                        <!-- Floating Info Card -->
+                        <div class="absolute -bottom-4 -left-4 bg-surface rounded-xl shadow-lg border border-border p-4 hidden lg:block">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white">
+                                    <i class="ph ph-code text-lg"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-muted">Current Focus</p>
+                                    <p class="text-sm font-semibold">Fullstack Development</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- project 4 : KT Timer - image left, text right-->
-                <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-                    <!-- image col -->
-                    <div class="relative lg:order-1">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-br from-amber-400 to-orange-500 rounded-3xl transform -rotate-2 opacity-20">
-                        </div>
-                        <div class="relative overflow-hidden rounded-3xl border border-gray-200 shadow-lg">
-                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop"
-                                alt="KT Timer Desktop App"
-                                class="w-full h-80 object-cover hover:scale-105 transition-transform duration-500">
-                        </div>
-                    </div>
-
-                    <!-- content col -->
-                    <div class="space-y-6 lg:order-2">
-                        <!-- category badge -->
-                        <div
-                            class="inline-flex items-center gap-2 px-3 py-1.5 bg-amber-100 text-amber-700 rounded-lg text-sm font-medium">
-                            <i class="ph ph-desktop"></i>
-                            <span>Desktop Application</span>
-                        </div>
-                        <!-- project title -->
-                        <h3 class="text-3xl font-bold text-gray-900">KT Timer</h3>
-                        <!-- description -->
-                        <p class="text-gray-600 leading-relaxed">
-                            Ứng dụng desktop hẹn giờ và lập lịch cho chuỗi các hành động, thao tác thực hiện tự động trên máy tính. 
-                            Chức năng chính: Hẹn giờ tắt/mở phần mềm, mô phỏng thao tác chuột và bàn phím, 
-                            nhắc nhở thông báo, chạy các lệnh Command.
-                        </p>
-                        <!-- tag -->
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">C#</span>
-                            <span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">.NET WinForms</span>
-                            <span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">Windows API</span>
-                        </div>
-                        <!-- link -->
-                        <a href="https://github.com/kimthien128/KT-Timer/blob/main/README.md" target="_blank"
-                            class="inline-flex items-center gap-2 text-amber-600 font-medium hover:text-amber-700 transition-colors group">
-                            Xem trên GitHub
-                            <i class="ph ph-arrow-square-out"></i>
-                        </a>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
 
-    <!-- ==================== ABOUT SECTION ==================== -->
-    <section id="about" class="py-20 lg:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-                <!-- left -->
-                <div class="space-y-8">
-                    <!-- title -->
-                    <h2 class="text-4xl font-bold text-gray-900">
-                        Về Tôi
-                    </h2>
-
-                    <!-- paragraph -->
-                    <div class="space-y-4 text-gray-600 leading-relaxed">
-                        <p>
-                            Tôi là Nguyễn Kim Thiện, Fullstack Developer với kinh nghiệm phát triển ứng dụng từ frontend đến backend. 
-                            Hành trình lập trình của tôi bắt đầu từ niềm đam mê công nghệ và mong muốn tạo ra các sản phẩm 
-                            có giá trị thực tiễn cho cộng đồng.
-                        </p>
-                        <p>
-                            Tôi tin rằng một sản phẩm tốt không chỉ đẹp về giao diện mà còn phải giải quyết được vấn đề thực tế, 
-                            mang lại trải nghiệm tốt nhất cho ngườI dùng. Mỗi dự án là cơ hội để học hỏi, phát triển 
-                            và vượt qua giới hạn bản thân.
-                        </p>
-                        <p>
-                            Hiện tại tôi đang tập trung vào các công nghệ JavaScript/TypeScript ecosystem (React, Vue, Node.js, NestJS) 
-                            và Python (FastAPI), đồng thờI không ngừng tìm hiểu AI/ML để tích hợp vào các sản phẩm.
-                        </p>
-                    </div>
-
-                    <!-- info grid -->
-                    <div class="grid grid-cols-2 gap-6 pt-4">
-                        <!-- location -->
-                        <div class="space-y-2">
-                            <h3 class="text-sm font-semibold uppercase tracking-wider text-gray-500">
-                                Địa điểm
-                            </h3>
-                            <div class="flex items-center gap-2 text-gray-900">
-                                <i class="ph ph-map-pin"></i>
-                                <span class="font-medium">Tân Bình, TP Hồ Chí Minh</span>
-                            </div>
-                        </div>
-
-                        <!-- experience -->
-                        <div class="space-y-2">
-                            <h3 class="text-sm font-semibold uppercase tracking-wider text-gray-500">
-                                Kinh nghiệm
-                            </h3>
-                            <div class="flex items-center gap-2 text-gray-900">
-                                <i class="ph ph-calendar-blank"></i>
-                                <span class="font-medium">1+ năm</span>
-                            </div>
-                        </div>
-
-                        <!-- Education 1 -->
-                        <div class="space-y-2">
-                            <h3 class="text-sm font-semibold uppercase tracking-wider text-gray-500">
-                                Học vấn
-                            </h3>
-                            <div class="flex items-center gap-2 text-gray-900">
-                                <i class="ph ph-graduation-cap"></i>
-                                <span class="font-medium">ĐH Khoa Học Tự Nhiên HCM</span>
-                            </div>
-                            <p class="text-sm text-gray-500">Cử nhân CNTT (GPA 8.2/10)</p>
-                        </div>
-
-                        <!-- Education 2 -->
-                        <div class="space-y-2">
-                            <h3 class="text-sm font-semibold uppercase tracking-wider text-gray-500">
-                                &nbsp;
-                            </h3>
-                            <div class="flex items-center gap-2 text-gray-900">
-                                <i class="ph ph-graduation-cap"></i>
-                                <span class="font-medium">ĐH Bách Khoa TP HCM</span>
-                            </div>
-                            <p class="text-sm text-gray-500">Kỹ sư (GPA 7.35/10)</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- right col -->
-                <div class="grid grid-cols-2 gap-4">
-                    <!-- col 1 -->
-                    <div class="flex flex-col gap-4">
-                        <div class="overflow-hidden rounded-2xl">
-                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=500&fit=crop"
-                                alt="workspace"
-                                class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300">
-                        </div>
-                        <div class="overflow-hidden rounded-2xl">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop"
-                                alt="Design Process"
-                                class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300">
-                        </div>
-                    </div>
-
-                    <!-- col 2 (offset pt-8)-->
-                    <div class="flex flex-col gap-4 pt-8">
-                        <div class="overflow-hidden rounded-2xl">
-                            <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?w=400&h=400&fit=crop"
-                                alt="Coffee and Code"
-                                class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300">
-                        </div>
-                        <div class="overflow-hidden rounded-2xl">
-                            <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=400&h=500&fit=crop"
-                                alt="Creative Work"
-                                class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ==================== EXPERIENCE SECTION ==================== -->
-    <section id="experience">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- section header -->
-            <div class="mb-16 lg:mb-24">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">Kinh Nghiệm Làm Việc</h2>
-                <p class="text-lg text-gray-600 max-w-2xl">
-                    Hành trình phát triển sự nghiệp với các dự án thực tế trong lĩnh vực phát triển phần mềm và thiết kế UI/UX.
-                </p>
-            </div>
-
-            <!-- timeline container -->
-            <div class="relative experience-timeline">
-                <!-- static timeline line -->
-                <div class=" absolute left-4 lg:left-1/2 lg:-translate-x-1/2 top-0 bottom-0 w-px bg-gray-200"></div>
-                <!-- progress line -->
-                <div id="progress-line"
-                    class="absolute left-4 lg:left-1/2 lg:-translate-x-1/2 top-0 w-px bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 h-0 transition-all duration-100">
-                </div>
-                <!-- experience items -->
-                <div class="space-y-12 lg:space-y-16">
-                    <!-- experience 1: Dự án Logitrack -->
-                    <div class="relative experience-item" data-index="0">
-                        <!-- timeline dot -->
-                        <div
-                            class="timeline-dot absolute left-4 lg:left-1/2 lg:-translate-x-1/2 w-3 h-3 bg-gray-300 rounded-full border-2 border-white shadow transition-all duration-300 top-6 z-10">
-                        </div>
-                        <!-- content card -->
-                        <div class="ml-12 lg:ml-0 lg:grid lg:grid-cols-2 lg:gap-12 items-center group">
-                            <!-- left side -->
-                            <div class="hidden lg:block"></div>
-                            <!-- right side -->
-                            <div
-                                class="bg-white rounded-2xl p-6 lg:p-8 shadow-sm border border-gray-100 hover:shadow-lg hover:border-emerald-200 transition-all duration-300">
-                                <!-- header row -->
-                                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 mb-4">
-                                    <!-- company & title -->
-                                    <div class="flex items-start gap-4">
-                                        <!-- company logo -->
-                                        <div
-                                            class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center text-white font-bold text-xl shrink-0">
-                                            L
-                                        </div>
-                                        <div>
-                                            <h3 class="text-xl font-bold text-gray-900">Designer & Developer</h3>
-                                            <p class="text-gray-600 font-medium">Dự án Logitrack</p>
-                                        </div>
-                                    </div>
-                                    <!-- date & duration -->
-                                    <div class="text-right shrink-0">
-                                        <p class="text-sm font-semibold text-gray-900">08/2025</p>
-                                        <p class="text-xs text-gray-500">Product Project</p>
-                                    </div>
-                                </div>
-                                <!-- description -->
-                                <p class="text-gray-600 leading-relaxed mb-4">
-                                    Phần mềm hỗ trợ quản lý, điều phối đơn hàng, phương tiện, theo dõi GPS cho các công ty Logistics.
-                                    Thiết kế UI chính cho giao diện Web & Mobile App, code landing page và frontend phiên bản web,
-                                    phát triển Mini CRM fullstack quản lý thông tin khách hàng.
-                                </p>
-                                <!-- skill tags -->
-                                <div class="flex flex-wrap gap-2">
-                                    <span
-                                        class="px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-sm font-medium">VueJS</span>
-                                    <span
-                                        class="px-3 py-1 bg-teal-50 text-teal-700 rounded-full text-sm font-medium">NestJS</span>
-                                    <span
-                                        class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">Figma</span>
-                                    <span
-                                        class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">Bootstrap</span>
-                                </div>
-                                <!-- hover icon -->
-                                <a href="https://logitrackvn.com/" target="_blank" class="mt-4 flex justify-end opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer">
-                                    <i class="ph ph-arrow-right text-emerald-500 text-xl"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- experience 2: Dự án Việc Làm Vàng -->
-                    <div class="relative experience-item" data-index="1">
-                        <!-- timeline dot -->
-                        <div
-                            class="timeline-dot absolute left-4 lg:left-1/2 lg:-translate-x-1/2 w-3 h-3 bg-gray-300 rounded-full border-2 border-white shadow transition-all duration-300 top-6 z-10">
-                        </div>
-                        <!-- content card -->
-                        <div class="ml-12 lg:ml-0 lg:grid lg:grid-cols-2 lg:gap-12 items-center group">
-                            <!-- left side -->
-                            <div
-                                class="bg-white rounded-2xl p-6 lg:p-8 shadow-sm border border-gray-100 hover:shadow-lg hover:border-purple-200 transition-all duration-300 lg:order-1">
-
-                                <!-- header row -->
-                                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 mb-4">
-                                    <!-- company & title -->
-                                    <div class="flex items-start gap-4">
-                                        <!-- company logo -->
-                                        <div
-                                            class="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center text-white font-bold text-xl shrink-0">
-                                            V
-                                        </div>
-                                        <div>
-                                            <h3 class="text-xl font-bold text-gray-900">Fullstack Developer</h3>
-                                            <p class="text-gray-600 font-medium">Dự án Việc Làm Vàng</p>
-                                        </div>
-                                    </div>
-                                    <!-- date & duration -->
-                                    <div class="text-right shrink-0">
-                                        <p class="text-sm font-semibold text-gray-900">08/2025</p>
-                                        <p class="text-xs text-gray-500">Outsource Project</p>
-                                    </div>
-                                </div>
-                                <!-- description -->
-                                <p class="text-gray-600 leading-relaxed mb-4">
-                                    Website tìm việc làm vieclamvang.com. Xây dựng đầy đủ các chức năng cơ bản 
-                                    theo mô hình MVC cho cả 2 phân quyền: Nhà tuyển dụng và Ứng viên.
-                                    Phát triển toàn bộ hệ thống backend và frontend cho nền tảng tuyển dụng.
-                                </p>
-                                <!-- skill tags -->
-                                <div class="flex flex-wrap gap-2">
-                                    <span
-                                        class="px-3 py-1 bg-purple-50 text-purple-700 rounded-full text-sm font-medium">PHP</span>
-                                    <span
-                                        class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">MVC</span>
-                                    <span
-                                        class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">MySQL</span>
-                                </div>
-                                <!-- hover icon -->
-                                <a href="https://www.vieclamvang.com/" target="_blank" class="mt-4 flex justify-end opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer">
-                                    <i class="ph ph-arrow-right text-purple-500 text-xl"></i>
-                                </a>
-                            </div>
-
-                            <!-- right side -->
-                            <div class="hidden lg:block lg:order-2"></div>
-                        </div>
-                    </div>
-
-                    <!-- Experience 3: Newnet -->
-                    <div class="relative experience-item" data-index="2">
-                        <!-- Timeline Dot -->
-                        <div
-                            class="timeline-dot absolute left-4 lg:left-1/2 lg:-translate-x-1/2 w-3 h-3 bg-gray-300 rounded-full border-2 border-white shadow transition-all duration-300 top-6 z-10">
-                        </div>
-
-                        <!-- Content Card -->
-                        <div class="ml-12 lg:ml-0 lg:grid lg:grid-cols-2 lg:gap-12 items-center group">
-
-                            <!-- Left side (Empty on desktop for odd items) -->
-                            <div class="hidden lg:block"></div>
-
-                            <!-- Right side (Card) -->
-                            <div
-                                class="bg-white rounded-2xl p-6 lg:p-8 shadow-sm border border-gray-100 hover:shadow-lg hover:border-blue-200 transition-all duration-300">
-
-                                <!-- Header Row -->
-                                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 mb-4">
-
-                                    <!-- Company & Title -->
-                                    <div class="flex items-start gap-4">
-                                        <!-- Company Logo -->
-                                        <div
-                                            class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center text-white font-bold text-xl shrink-0">
-                                            N
-                                        </div>
-                                        <div>
-                                            <h3 class="text-xl font-bold text-gray-900">Fresher Developer & UI/UX Designer</h3>
-                                            <p class="text-gray-600 font-medium">Công Ty Cổ Phần Công Nghệ Newnet</p>
-                                        </div>
-                                    </div>
-
-                                    <!-- Date & Duration -->
-                                    <div class="text-right shrink-0">
-                                        <p class="text-sm font-semibold text-gray-900">06/2023 - Hiện tại</p>
-                                        <p class="text-xs text-gray-500">1+ năm</p>
-                                    </div>
-                                </div>
-
-                                <!-- Description -->
-                                <p class="text-gray-600 leading-relaxed mb-4">
-                                    Công ty gia công website, phần mềm & cung cấp hosting. 
-                                    Thực tập sinh & Freelance các task, module cho các dự án product & outsource của công ty.
-                                    Thiết kế UI/UX và phát triển frontend cho nhiều dự án logistics, tuyển dụng.
-                                </p>
-
-                                <!-- Skills Tags -->
-                                <div class="flex flex-wrap gap-2">
-                                    <span
-                                        class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">VueJS</span>
-                                    <span
-                                        class="px-3 py-1 bg-purple-50 text-purple-700 rounded-full text-sm font-medium">NestJS</span>
-                                    <span
-                                        class="px-3 py-1 bg-green-50 text-green-700 rounded-full text-sm font-medium">Figma</span>
-                                    <span
-                                        class="px-3 py-1 bg-orange-50 text-orange-700 rounded-full text-sm font-medium">UI/UX Design</span>
-                                </div>
-
-                                <!-- Hover Icon -->
-                                <a href="https://newnet.vn/" target="_blank" class="mt-4 flex justify-end opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer">
-                                    <i class="ph ph-arrow-right text-blue-500 text-xl"></i>
-                                </a>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-    
-    <!-- ==================== CONTACT SECTION ==================== -->
-    <section id="contact" class="py-24 md:py-32 px-6 bg-white">
-        <div class="max-w-2xl mx-auto text-center">
-            <!-- typo -->
-            <div class="space-y-6 mb-12">
-                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900">
-                    Hãy hợp tác cùng nhau!
+    <!-- Projects Section -->
+    <section id="work" class="py-20 lg:py-32 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <!-- Section Header -->
+            <div class="mb-16 lg:mb-20">
+                <p class="text-sm font-medium text-accent mb-3">Selected Work</p>
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">
+                    Dự Án Nổi Bật
                 </h2>
-                <p class="text-lg md:text-xl text-gray-600 max-w-lg mx-auto leading-relaxed">
-                    Bạn có dự án cần phát triển? Tôi rất mong được lắng nghe.
-                    Hãy gửi email hoặc kết nối qua GitHub để trao đổi thêm.
+                <p class="text-secondary max-w-2xl leading-relaxed">
+                    Các dự án thực tế thể hiện khả năng giải quyết vấn đề, từ ứng dụng AI đến phần mềm logistics.
                 </p>
             </div>
+            
+            <!-- Projects Grid -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Project 1: KT SpeakUp -->
+                <article class="project-card bg-surface rounded-2xl border border-border overflow-hidden">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="assets/ktspeakup.png" alt="KT SpeakUp" class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105">
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div>
+                            <span class="text-xs font-medium text-muted uppercase tracking-wider">AI Application</span>
+                            <h3 class="text-xl font-semibold mt-1">KT SpeakUp</h3>
+                        </div>
+                        <p class="text-secondary text-sm leading-relaxed">
+                            Ứng dụng luyện nói tiếng Anh với AI. Người dùng có thể luyện tập hội thoại một kèm một với AI qua voice hoặc text chat.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 bg-gray-50 text-xs font-medium text-secondary rounded-full">Python</span>
+                            <span class="px-2.5 py-1 bg-gray-50 text-xs font-medium text-secondary rounded-full">FastAPI</span>
+                            <span class="px-2.5 py-1 bg-gray-50 text-xs font-medium text-secondary rounded-full">ReactJS</span>
+                            <span class="px-2.5 py-1 bg-gray-50 text-xs font-medium text-secondary rounded-full">MongoDB</span>
+                        </div>
+                        <div class="pt-2 flex items-center gap-4 text-sm">
+                            <span class="text-muted"><strong class="text-primary">Role:</strong> Fullstack Developer</span>
+                        </div>
+                        <a href="https://speakup.ktstudio.vn/" target="_blank" rel="noopener noreferrer"
+                           class="inline-flex items-center gap-1.5 text-accent font-medium text-sm hover:underline">
+                            Xem dự án
+                            <i class="ph ph-arrow-up-right"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                <!-- Project 2: Logitrack -->
+                <article class="project-card bg-surface rounded-2xl border border-border overflow-hidden">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="assets/logitrack.jpg" alt="Logitrack" class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105">
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div>
+                            <span class="text-xs font-medium text-muted uppercase tracking-wider">Logistics Platform</span>
+                            <h3 class="text-xl font-semibold mt-1">Logitrack</h3>
+                        </div>
+                        <p class="text-secondary text-sm leading-relaxed">
+                            Phần mềm quản lý logistics: điều phối đơn hàng, phương tiện, theo dõi GPS. Bao gồm Mini CRM quản lý khách hàng.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 bg-gray-50 text-xs font-medium text-secondary rounded-full">VueJS</span>
+                            <span class="px-2.5 py-1 bg-gray-50 text-xs font-medium text-secondary rounded-full">NestJS</span>
+                            <span class="px-2.5 py-1 bg-gray-50 text-xs font-medium text-secondary rounded-full">Figma</span>
+                            <span class="px-2.5 py-1 bg-gray-50 text-xs font-medium text-secondary rounded-full">Bootstrap</span>
+                        </div>
+                        <div class="pt-2 flex items-center gap-4 text-sm">
+                            <span class="text-muted"><strong class="text-primary">Role:</strong> Designer & Developer</span>
+                        </div>
+                        <a href="https://logitrackvn.com/" target="_blank" rel="noopener noreferrer"
+                           class="inline-flex items-center gap-1.5 text-accent font-medium text-sm hover:underline">
+                            Xem landing page
+                            <i class="ph ph-arrow-up-right"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                <!-- Project 3: KT CEP -->
+                <article class="project-card bg-surface rounded-2xl border border-border overflow-hidden">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="assets/ktcep.png" alt="KT CEP" class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105">
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div>
+                            <span class="text-xs font-medium text-muted uppercase tracking-wider">Adobe Extension</span>
+                            <h3 class="text-xl font-semibold mt-1">KT CEP</h3>
+                        </div>
+                        <p class="text-secondary text-sm leading-relaxed">
+                            Extension cho Adobe Photoshop giúp tự động hóa xử lý layer, layout. Tăng năng suất cho designer với các thao tác lặp lại.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 bg-gray-50 text-xs font-medium text-secondary rounded-full">HTML</span>
+                            <span class="px-2.5 py-1 bg-gray-50 text-xs font-medium text-secondary rounded-full">CSS</span>
+                            <span class="px-2.5 py-1 bg-gray-50 text-xs font-medium text-secondary rounded-full">JavaScript</span>
+                            <span class="px-2.5 py-1 bg-gray-50 text-xs font-medium text-secondary rounded-full">CEP</span>
+                        </div>
+                        <div class="pt-2 flex items-center gap-4 text-sm">
+                            <span class="text-muted"><strong class="text-primary">Role:</strong> Frontend Developer</span>
+                        </div>
+                        <a href="https://cep.ktstudio.vn/" target="_blank" rel="noopener noreferrer"
+                           class="inline-flex items-center gap-1.5 text-accent font-medium text-sm hover:underline">
+                            Xem dự án
+                            <i class="ph ph-arrow-up-right"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                <!-- Project 4: KT Timer -->
+                <article class="project-card bg-surface rounded-2xl border border-border overflow-hidden">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="assets/kttimer.png" alt="KT Timer" class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105">
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div>
+                            <span class="text-xs font-medium text-muted uppercase tracking-wider">Desktop App</span>
+                            <h3 class="text-xl font-semibold mt-1">KT Timer</h3>
+                        </div>
+                        <p class="text-secondary text-sm leading-relaxed">
+                            Ứng dụng desktop hẹn giờ và lập lịch tự động. Tắt/mở phần mềm, mô phỏng thao tác chuột/bàn phím, chạy lệnh Command.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 bg-gray-50 text-xs font-medium text-secondary rounded-full">C#</span>
+                            <span class="px-2.5 py-1 bg-gray-50 text-xs font-medium text-secondary rounded-full">.NET WinForms</span>
+                            <span class="px-2.5 py-1 bg-gray-50 text-xs font-medium text-secondary rounded-full">Windows API</span>
+                        </div>
+                        <div class="pt-2 flex items-center gap-4 text-sm">
+                            <span class="text-muted"><strong class="text-primary">Role:</strong> Desktop Developer</span>
+                        </div>
+                        <a href="https://github.com/kimthien128/KT-Timer/blob/main/README.md" target="_blank" rel="noopener noreferrer"
+                           class="inline-flex items-center gap-1.5 text-accent font-medium text-sm hover:underline">
+                            Xem trên GitHub
+                            <i class="ph ph-arrow-up-right"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
 
-            <!-- CTA button -->
+    <!-- Expertise Section -->
+    <section id="expertise" class="py-20 lg:py-32 px-6">
+        <div class="max-w-6xl mx-auto">
+            <!-- Section Header -->
+            <div class="mb-16 lg:mb-20">
+                <p class="text-sm font-medium text-accent mb-3">Technical Skills</p>
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">
+                    Chuyên Môn Kỹ Thuật
+                </h2>
+            </div>
+            
+            <!-- Skills Grid -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Frontend -->
+                <div class="space-y-4">
+                    <div class="w-10 h-10 bg-primary/5 rounded-lg flex items-center justify-center">
+                        <i class="ph ph-browser text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold">Frontend</h3>
+                    <ul class="space-y-2 text-sm text-secondary">
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-accent rounded-full"></span>
+                            React, Vue.js
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-accent rounded-full"></span>
+                            TypeScript, JavaScript
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-accent rounded-full"></span>
+                            Tailwind CSS, Bootstrap
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-accent rounded-full"></span>
+                            Responsive Design
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Backend -->
+                <div class="space-y-4">
+                    <div class="w-10 h-10 bg-primary/5 rounded-lg flex items-center justify-center">
+                        <i class="ph ph-hard-drives text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold">Backend</h3>
+                    <ul class="space-y-2 text-sm text-secondary">
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-accent rounded-full"></span>
+                            Node.js, NestJS, FastAPI
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-accent rounded-full"></span>
+                            Python, PHP
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-accent rounded-full"></span>
+                            RESTful API Design
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-accent rounded-full"></span>
+                            MongoDB, Postgres
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Tools & Others -->
+                <div class="space-y-4">
+                    <div class="w-10 h-10 bg-primary/5 rounded-lg flex items-center justify-center">
+                        <i class="ph ph-wrench text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold">Tools & Others</h3>
+                    <ul class="space-y-2 text-sm text-secondary">
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-accent rounded-full"></span>
+                            Git, GitHub
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-accent rounded-full"></span>
+                            Figma
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-accent rounded-full"></span>
+                            C# .NET Desktop
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-accent rounded-full"></span>
+                            AI Integration
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 lg:py-32 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <!-- Section Header -->
+            <div class="mb-16 lg:mb-20">
+                <p class="text-sm font-medium text-accent mb-3">Work Experience</p>
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">
+                    Kinh Nghiệm Làm Việc
+                </h2>
+            </div>
+            
+            <!-- Experience List -->
+            <div class="space-y-8">
+                <!-- Experience 1 -->
+                <div class="flex flex-col md:flex-row md:items-start gap-6 pb-8 border-b border-border">
+                    <div class="md:w-48 shrink-0">
+                        <p class="text-sm font-medium text-muted">08/2025</p>
+                        <p class="text-xs text-muted/70 mt-1">Product Project</p>
+                    </div>
+                    <div class="flex-1 space-y-2">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                            <h3 class="text-lg font-semibold">Designer & Developer</h3>
+                            <span class="px-3 py-1 bg-gray-50 text-xs font-medium text-secondary rounded-full w-fit">Project</span>
+                        </div>
+                        <a href="https://logitrackvn.com/" target="_blank" rel="noopener noreferrer" class="text-accent font-medium hover:underline inline-flex items-center gap-1">
+                            Dự án Logitrack
+                            <i class="ph ph-arrow-up-right text-xs"></i>
+                        </a>
+                        <p class="text-secondary text-sm leading-relaxed">
+                            Phần mềm hỗ trợ quản lý, điều phối đơn hàng, phương tiện, theo dõi GPS cho các công ty Logistic. Thiết kế UI chính cho giao diện Web & Mobile App theo bảng mô tả yêu cầu, điều chỉnh theo feedback. Code landing page từ file thiết kế được bàn giao, code frontend cho phiên bản web và fullstack ứng dụng Mini CRM để quản lý thông tin khách hàng.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-2 py-0.5 text-xs text-muted">VueJS</span>
+                            <span class="px-2 py-0.5 text-xs text-muted">NestJS</span>
+                            <span class="px-2 py-0.5 text-xs text-muted">Postgres</span>
+                            <span class="px-2 py-0.5 text-xs text-muted">Figma</span>
+                            <span class="px-2 py-0.5 text-xs text-muted">Bootstrap</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Experience 2 -->
+                <div class="flex flex-col md:flex-row md:items-start gap-6">
+                    <div class="md:w-48 shrink-0">
+                        <p class="text-sm font-medium text-muted">08/2025</p>
+                        <p class="text-xs text-muted/70 mt-1">Outsource Project</p>
+                    </div>
+                    <div class="flex-1 space-y-2">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                            <h3 class="text-lg font-semibold">Fullstack Developer</h3>
+                            <span class="px-3 py-1 bg-gray-50 text-xs font-medium text-secondary rounded-full w-fit">Project</span>
+                        </div>
+                        <a href="https://www.vieclamvang.com/" target="_blank" rel="noopener noreferrer" class="text-accent font-medium hover:underline inline-flex items-center gap-1">
+                            Dự án Việc Làm Vàng
+                            <i class="ph ph-arrow-up-right text-xs"></i>
+                        </a>
+                        <p class="text-secondary text-sm leading-relaxed">
+                            Website tìm việc làm vieclamvang.com. Xây dựng đầy đủ các chức năng cơ bản cho website tìm việc làm theo mô hình MVC cho cả 2 phân quyền: Nhà tuyển dụng và Ứng viên. Phát triển toàn bộ hệ thống backend và frontend cho nền tảng tuyển dụng.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-2 py-0.5 text-xs text-muted">PHP</span>
+                            <span class="px-2 py-0.5 text-xs text-muted">MVC</span>
+                            <span class="px-2 py-0.5 text-xs text-muted">Postgres</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience 3 -->
+                <div class="flex flex-col md:flex-row md:items-start gap-6 pb-8 border-b border-border">
+                    <div class="md:w-48 shrink-0">
+                        <p class="text-sm font-medium text-muted">06/2023</p>
+                        <p class="text-xs text-muted/70 mt-1"> < 1 năm</p>
+                    </div>
+                    <div class="flex-1 space-y-2">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                            <h3 class="text-lg font-semibold">Fresher Developer & UI/UX Designer</h3>
+                            <span class="px-3 py-1 bg-gray-50 text-xs font-medium text-secondary rounded-full w-fit">Fresher</span>
+                        </div>
+                        <a href="https://newnet.vn/" target="_blank" rel="noopener noreferrer" class="text-accent font-medium hover:underline inline-flex items-center gap-1">
+                            Công Ty Cổ Phần Công Nghệ Newnet
+                            <i class="ph ph-arrow-up-right text-xs"></i>
+                        </a>
+                        <p class="text-secondary text-sm leading-relaxed">
+                            Công ty gia công website, phần mềm & cung cấp hosting. Thực tập sinh & Freelance các task, module cho các dự án product & outsource của công ty. Tham gia thiết kế UI/UX và phát triển frontend cho nhiều dự án logistics, tuyển dụng.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-2 py-0.5 text-xs text-muted">VueJS</span>
+                            <span class="px-2 py-0.5 text-xs text-muted">PHP</span>
+                            <span class="px-2 py-0.5 text-xs text-muted">Figma</span>
+                            <span class="px-2 py-0.5 text-xs text-muted">UI/UX</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 lg:py-32 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-16 items-start">
+                <!-- Content -->
+                <div class="space-y-8">
+                    <div>
+                        <p class="text-sm font-medium text-accent mb-3">About</p>
+                        <h2 class="text-3xl md:text-4xl font-bold tracking-tight">
+                            Giới Thiệu
+                        </h2>
+                    </div>
+                    
+                    <div class="space-y-4 text-secondary leading-relaxed">
+                        <p>
+                            Tôi là Nguyễn Kim Thiện, Fullstack Developer với kinh nghiệm phát triển ứng dụng từ frontend đến backend.
+                        </p>
+                        <p>
+                            Tôi tin rằng một sản phẩm tốt không chỉ đẹp về giao diện mà còn phải giải quyết được vấn đề thực tế, mang lại trải nghiệm tốt nhất cho người dùng.
+                        </p>
+                        <p>
+                            Hiện tại đang tập trung vào JavaScript/TypeScript ecosystem (React, Vue, Node.js, NestJS) và Python (FastAPI), đồng thời tìm hiểu AI/ML để tích hợp vào các sản phẩm.
+                        </p>
+                    </div>
+                    
+                    <!-- Info Grid -->
+                    <div class="grid grid-cols-2 gap-6 pt-4">
+                        <div>
+                            <p class="text-xs font-medium text-muted uppercase tracking-wider mb-1">Địa điểm</p>
+                            <p class="text-sm font-medium">Tân Bình, TP HCM</p>
+                        </div>
+                        <div>
+                            <p class="text-xs font-medium text-muted uppercase tracking-wider mb-1">Kinh nghiệm</p>
+                            <p class="text-sm font-medium">1+ năm</p>
+                        </div>
+                        <div>
+                            <p class="text-xs font-medium text-muted uppercase tracking-wider mb-1">Học vấn</p>
+                            <p class="text-sm font-medium">ĐH Khoa Học Tự Nhiên HCM</p>
+                            <p class="text-xs text-muted">Cử nhân CNTT (GPA 8.22/10)</p>
+                        </div>
+                        <div>
+                            <p class="text-xs font-medium text-muted uppercase tracking-wider mb-1">&nbsp;</p>
+                            <p class="text-sm font-medium">ĐH Bách Khoa TP HCM</p>
+                            <p class="text-xs text-muted">Kỹ sư (GPA 7.35/10)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Image Grid -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="space-y-4">
+                        <div class="aspect-[4/5] rounded-xl overflow-hidden bg-gray-100">
+                            <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400&h=500&fit=crop" 
+                                 alt="Camera photography hobby" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="aspect-square rounded-xl overflow-hidden bg-gray-100">
+                            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&h=400&fit=crop" 
+                                 alt="Coffee brewing morning" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        </div>
+                    </div>
+                    <div class="space-y-4 pt-8">
+                        <div class="aspect-square rounded-xl overflow-hidden bg-gray-100">
+                            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=400&h=400&fit=crop" 
+                                 alt="Gaming setup with player" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="aspect-[4/5] rounded-xl overflow-hidden bg-gray-100">
+                            <img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=400&h=500&fit=crop" 
+                                 alt="Vietnam rice fields" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 lg:py-32 bg-primary text-white">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-6">
+                Hãy hợp tác cùng nhau
+            </h2>
+            <p class="text-lg text-white/70 mb-10 max-w-xl mx-auto">
+                Cơ hội việc làm hay hợp tác dự án? <br>
+                Hãy kết nối với tôi.
+            </p>
+            
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="mailto:kimthien128@gmail.com"
-                    class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-colors text-lg font-medium">
+                <a href="mailto:kimthien128@gmail.com" 
+                   class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-primary font-medium rounded-full hover:bg-white/90 transition-colors">
                     <i class="ph ph-envelope text-xl"></i>
-                    <span>kimthien128@gmail.com</span>
+                    kimthien128@gmail.com
                 </a>
-
-                <a href="https://github.com/kimthien128" target="_blank"
-                    class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 border-2 border-gray-200 text-gray-900 rounded-full hover:bg-gray-50 transition-colors text-lg font-medium">
+                
+                <a href="https://github.com/kimthien128" target="_blank" rel="noopener noreferrer"
+                   class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 border border-white/30 text-white font-medium rounded-full hover:bg-white/10 transition-colors">
                     <i class="ph ph-github-logo text-xl"></i>
-                    <span>GitHub</span>
+                    GitHub
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- ==================== TIMELINE SCROLL ANIMATION SCRIPT ==================== -->
+    <!-- Footer -->
+    <!-- Mobile Menu Script -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const progressLine = document.getElementById('progress-line');
-            const timeline = document.querySelector('.experience-timeline');
-            const items = document.querySelectorAll('.experience-item');
-            const dots = document.querySelectorAll('.timeline-dot');
-
-            let ticking = false;
-
-            function updateTimeline() {
-                if (!timeline) return;
-
-                const rect = timeline.getBoundingClientRect();
-                const windowHeight = window.innerHeight;
-                const timelineTop = rect.top;
-                const timelineHeight = rect.height;
-
-                //calculate
-                let progress = 0;
-
-                if (timelineTop < windowHeight * 0.5) {
-                    progress = (windowHeight * 0.5 - timelineTop) / (timelineHeight + windowHeight * 0.3);
-                    progress = Math.min(Math.max(progress, 0), 1);
-                }
-
-                //update progress line height
-                if (progressLine) {
-                    progressLine.style.height = (progress * 100) + '%';
-                }
-
-                //update dot
-                items.forEach((item, index) => {
-                    const itemRect = item.getBoundingClientRect();
-                    const itemCenter = itemRect.top + itemRect.height / 2;
-                    const viewportCenter = windowHeight / 2;
-
-                    //check if item near center viewport
-                    if (Math.abs(itemCenter - viewportCenter) < itemRect.height / 2 + 100) {
-                        dots[index].classList.remove('bg-gray-300', 'w-3', 'h-3');
-                        dots[index].classList.add('bg-blue-500', 'w-4', 'h-4', 'ring-4', 'ring-blue-200', 'scale-125');
-                    } else {
-                        dots[index].classList.add('bg-gray-300', 'w-3', 'h-3');
-                        dots[index].classList.remove('bg-blue-500', 'w-4', 'h-4', 'ring-4', 'ring-blue-200', 'scale-125');
-                    }
-                })
-
-                ticking = false;
-            }
-
-            //listen scroll
-            window.addEventListener('scroll', function () {
-                if (!ticking) {
-                    window.requestAnimationFrame(updateTimeline);
-                    ticking = true;
-                }
-            })
-
-            //init update
-            updateTimeline();
-        });
-    </script>
-
-    <!-- ==================== Accordion Script ==================== -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const faqItems = document.querySelectorAll('[data-faq]');
-
-            faqItems.forEach(item => {
-                const trigger = item.querySelector('[data-accordion-trigger]');
-                const content = item.querySelector('[data-accordion-content]');
-                const icon = item.querySelector('[data-icon]');
-
-                trigger.addEventListener('click', () => {
-                    const isOpen = content.style.gridTemplateRows === '1fr';
-
-                    // Close all other items (remove if want multiple open)
-                    faqItems.forEach(otherItem => {
-                        if (otherItem !== item) {
-                            const otherContent = otherItem.querySelector('[data-accordion-content]');
-                            const otherIcon = otherItem.querySelector('[data-icon]');
-                            otherContent.style.gridTemplateRows = '0fr';
-                            otherIcon.classList.remove('ph-minus');
-                            otherIcon.classList.add('ph-plus');
-                            otherIcon.style.transform = 'rotate(0deg)';
-                        }
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+                
+                // Close menu when clicking on a link
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', function() {
+                        mobileMenu.classList.add('hidden');
                     });
-
-                    // Toggle current item
-                    if (isOpen) {
-                        content.style.gridTemplateRows = '0fr';
-                        icon.classList.remove('ph-minus');
-                        icon.classList.add('ph-plus');
-                        icon.style.transform = 'rotate(0deg)';
-                        item.classList.remove('border-purple-500/50');
-                        item.classList.add('border-gray-700');
-                    } else {
-                        content.style.gridTemplateRows = '1fr';
-                        icon.classList.remove('ph-plus');
-                        icon.classList.add('ph-minus');
-                        icon.style.transform = 'rotate(180deg)';
-                        item.classList.remove('border-gray-700');
-                        item.classList.add('border-purple-500/50');
+                });
+            }
+            
+            // Intersection Observer for fade-in animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
                     }
                 });
+            }, observerOptions);
+            
+            // Observe project cards
+            document.querySelectorAll('.project-card').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(card);
             });
         });
     </script>
